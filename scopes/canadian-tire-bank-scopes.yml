@@ -1,0 +1,33 @@
+generated: '2026-07-23'
+method: searched
+source: https://www.ctfs.com/.well-known/openid-configuration
+notes: >-
+  Scopes are taken verbatim from scopes_supported in the bank's published OpenID
+  Connect discovery document. These are standard OIDC login scopes plus a dynamic
+  client-registration scope — a consumer identity surface, not a banking-data API
+  scope set.
+schemes:
+- name: openIdConnect
+  source: well-known/canadian-tire-bank-openid-configuration.json
+  issuer: https://api.ctfs.com
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://api.ctfs.com:443/auth/oauth/v2/authorize
+    tokenUrl: https://api.ctfs.com:443/auth/oauth/v2/token
+scopes:
+- scope: openid
+  description: Authenticate the end user and issue an ID token (OpenID Connect core scope).
+  flows: [authorizationCode, implicit]
+  sources: [well-known/canadian-tire-bank-openid-configuration.json]
+- scope: email
+  description: Release the end user's email address claim.
+  flows: [authorizationCode, implicit]
+  sources: [well-known/canadian-tire-bank-openid-configuration.json]
+- scope: profile
+  description: Release the end user's basic profile claims.
+  flows: [authorizationCode, implicit]
+  sources: [well-known/canadian-tire-bank-openid-configuration.json]
+- scope: openid_client_registration
+  description: Permit dynamic OpenID Connect client registration (RFC 7591) against the registration endpoint.
+  flows: [authorizationCode]
+  sources: [well-known/canadian-tire-bank-openid-configuration.json]

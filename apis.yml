@@ -34,6 +34,18 @@ modified: '2026-07-23'
 specificationVersion: '0.19'
 apis: []
 common:
+- type: DomainSecurity
+  url: security/canadian-tire-bank-domain-security.yml
+- type: WellKnown
+  url: well-known/canadian-tire-bank-well-known.yml
+- type: Authentication
+  url: authentication/canadian-tire-bank-authentication.yml
+- type: OAuthScopes
+  url: scopes/canadian-tire-bank-scopes.yml
+- type: Conformance
+  url: conformance/canadian-tire-bank-conformance.yml
+- type: LLMsTxt
+  url: llms/canadian-tire-bank-llms.txt
 - type: Website
   url: https://www.ctfs.com
 - type: About

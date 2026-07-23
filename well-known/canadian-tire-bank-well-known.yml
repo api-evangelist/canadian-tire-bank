@@ -1,0 +1,34 @@
+generated: '2026-07-23'
+method: searched
+source: live probes of /.well-known/* on ctfs.com + api.ctfs.com
+notes: >-
+  The bank's consumer OpenID Connect discovery document is served anonymously
+  from https://www.ctfs.com/.well-known/openid-configuration and advertises an
+  authorization server whose issuer is https://api.ctfs.com. The api.ctfs.com
+  host itself (its own /.well-known/* and the referenced OAuth swagger) returned
+  HTTP 503 on every probe (2026-07-23) — the gateway is up on TLS but the service
+  is unavailable/gated, so live operation-level discovery could not be captured.
+hosts:
+- host: https://www.ctfs.com
+  documents:
+  - path: /.well-known/openid-configuration      # OIDC discovery (RFC 8414 / OIDC Discovery 1.0)
+    status: 200
+    file: canadian-tire-bank-openid-configuration.json
+  - path: /.well-known/security.txt              # RFC 9116
+    status: 404
+  - path: /.well-known/oauth-authorization-server # RFC 8414
+    status: 404
+  - path: /.well-known/api-catalog                # RFC 9727
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+- host: https://api.ctfs.com
+  documents:
+  - path: /.well-known/openid-configuration
+    status: 503
+  - path: /.well-known/oauth-authorization-server
+    status: 503
+  - path: /apidocs/auth/oauth/v2/swagger         # service_documentation from the OIDC doc
+    status: 503
+  - path: /openid/connect/jwks.json              # jwks_uri
+    status: 503

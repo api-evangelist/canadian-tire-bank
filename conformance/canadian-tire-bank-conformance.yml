@@ -1,0 +1,32 @@
+generated: '2026-07-23'
+method: derived
+source: well-known/canadian-tire-bank-openid-configuration.json
+notes: >-
+  Conformance asserted from the bank's published OpenID Connect discovery
+  document only. No published compliance program (SOC 2 / ISO 27001 / PCI DSS)
+  was found on the public surface, so no Compliance pointer is emitted.
+standards:
+- id: oauth2
+  conforms: true
+  evidence: discovery advertises authorization_endpoint, token_endpoint, and grant_types_supported (authorization_code, implicit, refresh_token)
+- id: oidc
+  conforms: true
+  evidence: valid OpenID Connect discovery document with issuer, jwks_uri, userinfo_endpoint, id_token signing algs
+- id: oauth2-dynamic-client-registration-rfc7591
+  conforms: true
+  evidence: registration_endpoint present and openid_client_registration scope advertised
+- id: oauth2-authorization-server-metadata-rfc8414
+  conforms: true
+  evidence: authorization-server metadata is discoverable (served as OIDC configuration)
+- id: pkce
+  conforms: false
+  evidence: code_challenge_methods_supported not advertised in discovery document
+- id: fapi
+  conforms: false
+  evidence: no FAPI security profile signalled; token_endpoint auth includes client_secret_basic/post (not mTLS/private_key_jwt-only)
+- id: fdx
+  conforms: false
+  evidence: no Financial Data Exchange participation documented (Canadian institution)
+- id: rfc9457-problem-details
+  conforms: false
+  evidence: no OpenAPI/error surface available to confirm application/problem+json

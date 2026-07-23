@@ -1,0 +1,23 @@
+# Canadian Tire Bank
+
+> Canadian Tire Bank (operating as Canadian Tire Financial Services) is a federally regulated Schedule I bank, wholly owned by Canadian Tire Corporation, Limited, chartered in 2003. It issues the Triangle Mastercard card family and offers high-interest savings accounts and GICs tied to the Triangle Rewards program. It publishes NO first-party public developer or banking API. A consumer OpenID Connect authorization server (Triangle account / cardmember sign-in) is discoverable at api.ctfs.com, but it is a login/identity surface, not a documented data API, and its host returned HTTP 503 at probe time. Consumer data access today is aggregator-based (Finicity by Mastercard, Flinks, Plaid) because Canada's Consumer-Driven Banking framework is legislated but not yet operational.
+
+## Identity & Auth (machine-readable surface found)
+- OpenID Connect discovery (issuer api.ctfs.com): https://www.ctfs.com/.well-known/openid-configuration
+- Authentication profile (OAuth2/OIDC, derived from discovery): authentication/canadian-tire-bank-authentication.yml
+- OAuth/OIDC scopes (openid, email, profile, openid_client_registration): scopes/canadian-tire-bank-scopes.yml
+- Conformance (OAuth2/OIDC/RFC 7591/RFC 8414): conformance/canadian-tire-bank-conformance.yml
+- Well-known index: well-known/canadian-tire-bank-well-known.yml
+- Domain security posture (TLS/HSTS/DNSSEC/CAA/SPF/DMARC): security/canadian-tire-bank-domain-security.yml
+
+## Company
+- Website (Canadian Tire Financial Services): https://www.ctfs.com
+- About: https://www.ctfs.com/content/ctfs/en/about-us.html
+- Terms of Service: https://www.ctfs.com/content/ctfs3/en/legal.html
+- LinkedIn: https://ca.linkedin.com/company/canadian-tire-bank
+
+## Notes for agents
+- No OpenAPI/Swagger, no SDKs, no CLI, no MCP server, no webhooks/AsyncAPI are published by the bank.
+- The api.ctfs.com OAuth authorization server is a consumer authentication endpoint, not a programmatic banking API; scopes are login-only (openid/email/profile).
+- A separate gated developer portal exists at developer.cantire.com but is operated by the RETAIL parent Canadian Tire Corporation (its TLS certificate expired 2026-02-20) and is treated as a distinct entity, not the bank.
+- For consumer account/transaction data, use a data aggregator (Finicity by Mastercard, Flinks, or Plaid), not a first-party bank API.
