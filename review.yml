@@ -1,0 +1,76 @@
+aid: canadian-tire-bank
+name: Canadian Tire Bank
+review:
+  question: Does Canadian Tire Bank expose a documented public first-party developer or banking API?
+  answer: false
+  date: '2026-07-23'
+  reviewer: API Evangelist
+findings:
+  summary: |
+    Canadian Tire Bank publishes no first-party public developer API or banking
+    API portal. It is a federally regulated Schedule I bank (chartered 2003),
+    wholly owned by Canadian Tire Corporation, Limited, operating as Canadian
+    Tire Financial Services and issuing the Triangle Mastercard card family plus
+    savings/GIC deposit products. Its public web presence (www.ctfs.com) is a
+    marketing and cardmember-servicing site with no developer documentation, no
+    downloadable OpenAPI/Swagger, and no published API reference.
+
+    A developer portal does exist at developer.cantire.com, but its TLS
+    certificate identifies the operator as "Canadian Tire Corporation, Limited"
+    (the RETAIL parent), not Canadian Tire Bank. That portal is a 3scale-style
+    gated program ("Register / Read the Docs / Make a Call / Get Support") whose
+    API catalog and IO-Docs require sign-in, and whose certificate expired on
+    20 February 2026 (notAfter Feb 20 23:59:59 2026 GMT) — a dormant, distinct
+    retail entity that is not attributed to the bank under distinct-entity
+    discipline.
+
+    Canada's Consumer-Driven Banking (open banking) framework — legislated via
+    Budget 2024 and the Fall Economic Statement 2024, with the FCAC as overseer
+    — is not yet operational. Accordingly, consumer access to Canadian Tire Bank
+    data today is voluntary and aggregator-based: coverage is provided through
+    Finicity (by Mastercard), Flinks and Plaid via credential-based /
+    screen-scraping-style connectivity, not a first-party bank API. No FDX
+    participation is documented, and as a Canadian institution no US Section
+    1033 posture applies. Authentication for the retail parent's gated portal
+    is API-key based (access keys); no first-party OAuth2/OIDC/mTLS banking API
+    surface is published.
+  posture:
+    firstPartyDeveloperPortal: false
+    developerPortalUrl: ""
+    parentRetailPortal: https://developer.cantire.com
+    parentRetailPortalOperator: Canadian Tire Corporation, Limited
+    parentRetailPortalCertExpired: '2026-02-20'
+    parentRetailPortalGated: true
+    downloadableSpecs: false
+    specProvenance: none
+    fdxParticipant: false
+    section1033Posture: not-applicable-canadian-institution
+    consumerDrivenBankingLive: false
+    aggregatorAccess:
+      - Finicity (by Mastercard)
+      - Flinks
+      - Plaid
+    authModel: none-published (retail parent portal uses API-key access keys)
+    charterType: Schedule I bank (federally chartered 2003)
+    ownership: wholly owned by Canadian Tire Corporation, Limited
+  transports:
+    - protocol: REST
+      scheme: https
+      documented: false
+      note: No public first-party REST API is documented by Canadian Tire Bank.
+sources:
+  - url: https://www.ctfs.com
+    type: Website
+    note: Canadian Tire Bank / Canadian Tire Financial Services site; HTTP 200. Marketing + cardmember servicing, no developer docs or specs.
+  - url: https://www.ctfs.com/content/ctfs/en/about-us.html
+    type: About
+    note: HTTP 200. Confirms Schedule I bank chartered 2003, owned by Canadian Tire Corporation.
+  - url: https://developer.cantire.com
+    type: DeveloperPortal
+    note: HTTP 200 but operated by Canadian Tire Corporation, Limited (retail parent, per TLS cert); gated behind sign-in; certificate expired 2026-02-20. Distinct entity, not the bank.
+  - url: https://ca.linkedin.com/company/canadian-tire-bank
+    type: LinkedIn
+    note: HTTP 200. Canadian Tire Bank company page.
+  - url: https://fintable.io/coverage/banks/Canada/5614_canadian-tire-bank
+    type: Reference
+    note: Third-party aggregator coverage listing (Finicity) for Canadian Tire Bank — evidence of aggregator-based, not first-party, data access.

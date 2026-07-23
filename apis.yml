@@ -1,0 +1,47 @@
+aid: canadian-tire-bank
+url: https://raw.githubusercontent.com/api-evangelist/canadian-tire-bank/refs/heads/main/apis.yml
+name: Canadian Tire Bank
+kind: company
+description: >-
+  Canadian Tire Bank (operating as Canadian Tire Financial Services) is a federally
+  regulated Schedule I bank, wholly owned by Canadian Tire Corporation, Limited and
+  federally chartered in 2003. Headquartered in Oakville, Ontario with operations in
+  St. Catharines and Welland, the bank is the financial-services arm of one of Canada's
+  best-known retailers. It issues the Triangle Mastercard, Triangle World Mastercard,
+  Triangle World Elite Mastercard, Gas Advantage and Cash Advantage Mastercards, and
+  offers high-interest savings accounts and GICs, all tied to the Triangle Rewards
+  loyalty program. On open finance, the bank exposes no first-party public developer
+  API or banking API portal. Canada's Consumer-Driven Banking framework (Budget 2024 /
+  Fall Economic Statement 2024, overseen by the FCAC) is legislated but not yet
+  operational, so consumer data access today is voluntary and aggregator-based —
+  Canadian Tire Bank card and account data is reached through aggregators such as
+  Finicity (by Mastercard), Flinks and Plaid rather than a first-party API. The
+  cantire.com developer portal is run by the retail parent Canadian Tire Corporation,
+  not the bank, is gated behind sign-in, and its TLS certificate expired in February
+  2026.
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+tags:
+- Financial Services
+- Banking
+- Canada
+- Schedule I Bank
+- Credit Cards
+- Mastercard
+- Consumer-Driven Banking
+- Data Aggregation
+created: '2026-07-23'
+modified: '2026-07-23'
+specificationVersion: '0.19'
+apis: []
+common:
+- type: Website
+  url: https://www.ctfs.com
+- type: About
+  url: https://www.ctfs.com/content/ctfs/en/about-us.html
+- type: TermsOfService
+  url: https://www.ctfs.com/content/ctfs3/en/legal.html
+- type: LinkedIn
+  url: https://ca.linkedin.com/company/canadian-tire-bank
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com
