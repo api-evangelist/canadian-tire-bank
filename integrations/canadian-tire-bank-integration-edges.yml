@@ -1,0 +1,16 @@
+generated: '2026-10-12'
+method: none
+source:
+- https://zapier.com/apps/canadian-tire-bank/integrations
+- https://n8n.io/integrations/canadian-tire-bank/
+- https://composio.dev/toolkits/canadian-tire-bank
+- https://monid.ai/tools/canadian-tire-bank
+checked:
+- https://composio.dev/toolkits/canadian-tire-bank
+- https://monid.ai/tools/canadian-tire-bank
+- https://n8n.io/integrations/canadian-tire-bank/
+- https://zapier.com/apps/canadian-tire-bank/integrations
+summary: null
+marketplace_apps: []
+edges: []
+templates: []
