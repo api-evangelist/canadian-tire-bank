@@ -35,3 +35,38 @@
       P856 not contradicting (Kin 2026-10-20 decision 2)
   status: not-a-workflow
   arazzo: null
+- slug: canadian-tire-bank-payments-canada-members-and-payment-system-participants
+  label: Payments Canada members and payment system participants
+  partner_name: Payments Canada members and payment system participants
+  category: Payments Canada membership / ACSS / Lynx participation
+  type: register
+  channel: regulator-register
+  evidence: https://www.payments.ca/payment-resources/directories
+  source: edge
+  relationship: standard-participant
+  contract_reference:
+    register: Payments Canada members and payment system participants
+    spec_file: null
+    standard: null
+    role: payment-system-member
+    registrations:
+    - registered_name: Canadian Tire Bank
+      register_status: member
+      register_country: CA
+      register_id: '338'
+      matched_domain: null
+      matched_by: register-name
+      licences:
+      - Payments Canada member
+      member_class: Banks
+      register_name_note: register-name 'canadiantirebank' = canadian-tire-bank; no wikidata P856
+    signal_note: 'participation only: a regulator registration / payment-system membership; no API conformance is
+      published by this register'
+    detected_by: sweep-canada-rpaa-psp-registry.py
+    detected: '2026-10-22'
+    matched_by: register-name
+    identity_source: register-name
+    identity_note: register gave only the name; exact normalised match to the repo's apis.yml name, one repo, Wikidata
+      P856 not contradicting (Kin 2026-10-20 decision 2)
+  status: not-a-workflow
+  arazzo: null
