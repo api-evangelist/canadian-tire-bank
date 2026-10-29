@@ -1,4 +1,4 @@
-# Canadian Tire Bank (canadian-tire-bank)
+# Canadian Tire Bank
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -64,47 +64,87 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Canadian Tire Bank (operating as Canadian Tire Financial Services) is a federally regulated Schedule I bank, wholly owned by Canadian Tire Corporation, Limited and federally chartered in 2003. It is the financial-services arm of one of Canada's best-known retailers, issuing the Triangle Mastercard family of cards and offering high-interest savings accounts and GICs tied to the Triangle Rewards loyalty program.
+Canadian Tire Bank (operating as Canadian Tire Financial Services) is a federally regulated Schedule I bank, wholly owned by Canadian Tire Corporation, Limited and federally chartered in 2003. Headquartered in Oakville, Ontario with operations in St. Catharines and Welland, the bank is the financial-services arm of one of Canada's best-known retailers. It issues the Triangle Mastercard, Triangle World Mastercard, Triangle World Elite Mastercard, Gas Advantage and Cash Advantage Mastercards, and offers high-interest savings accounts and GICs, all tied to the Triangle Rewards loyalty program. On open finance, the bank exposes no first-party public developer API or banking API portal. Canada's Consumer-Driven Banking framework (Budget 2024 / Fall Economic Statement 2024, overseen by the FCAC) is legislated but not yet operational, so consumer data access today is voluntary and aggregator-based — Canadian Tire Bank card and account data is reached through aggregators such as Finicity (by Mastercard), Flinks and Plaid rather than a first-party API. The cantire.com developer portal is run by the retail parent Canadian Tire Corporation, not the bank, is gated behind sign-in, and its TLS certificate expired in February 2026.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/canadian-tire-bank/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/canadian-tire-bank/refs/heads/main/apis.yml)
+**Areas:** Financial Services · Banking · Canada · Schedule I Bank · Credit Cards · Mastercard · Consumer-Driven Banking
 
-## Open Finance Posture
+## Canadian Tire Bank on APIs.io
 
-Canadian Tire Bank exposes **no first-party public developer API or banking API portal**. Its posture reflects the honest reality of Canadian open finance today:
+Everything profiled for Canadian Tire Bank is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/canadian-tire-bank/](https://apis.io/providers/canadian-tire-bank/)** — or go straight to one of the APIs or properties below.
 
-- **No first-party developer portal for the bank.** The `developer.cantire.com` portal is operated by the retail parent **Canadian Tire Corporation, Limited** (confirmed via its TLS certificate), not by the bank. It is gated behind sign-in and its certificate expired on 20 February 2026, indicating a dormant/neglected surface. It is a distinct retail entity and is not attributed to the bank here.
-- **Consumer-Driven Banking (CDB) not yet live.** Canada's federal Consumer-Driven Banking framework (Budget 2024 and the Fall Economic Statement 2024, overseen by the Financial Consumer Agency of Canada / FCAC) is legislated but not operational, so access remains voluntary and fragmented.
-- **Aggregator-based data access.** Canadian Tire Bank card and account data is reached through third-party aggregators — Finicity (by Mastercard), Flinks and Plaid — rather than a first-party API.
-- **No documented FDX participation** and, being a Canadian institution, no US Section 1033 posture applies.
+### Published properties
 
-## Tags
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-- Financial Services
-- Banking
-- Canada
-- Schedule I Bank
-- Credit Cards
-- Mastercard
-- Consumer-Driven Banking
-- Data Aggregation
+#### Security (2)
 
-## Timestamps
+Authentication, trust centre, and vulnerability disclosure.
 
-- **Created:** 2026-07-23
-- **Modified:** 2026-07-23
+- [Canadian Tire Bank Authentication](https://apis.io/security/canadian-tire-bank/canadian-tire-bank-authentication/)
+- [Canadian Tire Bank Domain Security](https://apis.io/security/canadian-tire-bank/canadian-tire-bank-domain-security/)
 
-## APIs
+#### OAuth scopes (1)
 
-No public first-party APIs are documented by Canadian Tire Bank. Consumer data access is available only via third-party aggregators (Finicity, Flinks, Plaid).
+The permissions the API asks for.
 
-## Common Properties
+- [Canadian Tire Bank Scopes](https://apis.io/scopes/canadian-tire-bank/canadian-tire-bank-scopes/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
 
 - [Website](https://www.ctfs.com)
-- [About](https://www.ctfs.com/content/ctfs/en/about-us.html)
-- [Terms Of Service / Legal](https://www.ctfs.com/content/ctfs3/en/legal.html)
-- [LinkedIn](https://ca.linkedin.com/company/canadian-tire-bank)
+- [Terms of service](https://www.ctfs.com/content/ctfs3/en/legal.html)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 12.7** — emerging · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 55.4 |
+| Contract quality | 0.0 |
+| Contract governance | 4.5 |
+| Operational transparency | 0.0 |
+| Developer ergonomics | 11.9 |
+| Access clarity | 10.5 |
+
+**Agent readiness 15.1** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | — |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | served (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | — |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | served (partial credit) |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | yes |
+| Agentic Commerce | — |
+
+**Regulatory alignment 34.6** — Banking & Open Finance
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/canadian-tire-bank/](https://apis.io/providers/canadian-tire-bank/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Canadian Tire Bank: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/canadian-tire-bank/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
